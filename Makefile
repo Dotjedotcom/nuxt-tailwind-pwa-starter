@@ -35,3 +35,14 @@ docker/build:
 docker/run:
 	@echo "Running Docker container..."
 	docker run --rm -it -p 3000:3000 --env-file .env.local --name nuxt-tailwind-app
+
+docker/compose:
+	@echo "Starting Docker Compose..."
+	docker compose up --build
+
+docker/compose/dev:
+	@echo "Starting Docker Compose in development mode..."
+	docker compose -f docker-compose.yml -f docker-compose.dev.yml up --build
+
+dcp: docker/compose
+dcd: docker/compose/dev

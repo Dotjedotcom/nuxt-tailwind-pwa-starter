@@ -17,6 +17,7 @@
     "@nuxt/scripts": "^0.12.0",
     "@nuxt/test-utils": "^3.19.2",
     "@nuxt/ui": "^4.0.0",
+    "@tailwindcss/postcss": "^4.1.13",
     "@tailwindcss/vite": "^4.1.13",
     "@unhead/vue": "^2.0.17",
     "eslint": "^9.36.0",
@@ -25,10 +26,11 @@
     "typescript": "^5.9.2",
     "vue": "^3.5.21",
     "vue-router": "^4.5.1"
-    },
-    "imagetracerjs": "^1.2.6",
-    "canvas": "^2.11.2",
+  },
+  "imagetracerjs": "^1.2.6",
+  "canvas": "^2.11.2",
   "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.14.0",
     "@vite-pwa/assets-generator": "^1.0.1",
     "vite-plugin-pwa": "^1.0.3"
   }

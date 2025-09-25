@@ -1,36 +1,21 @@
-# syntax = docker/dockerfile:1
+ARG NODE_VERSION=22
 
-ARG NODE_VERSION=22.19.0
-
-FROM node:${NODE_VERSION}-slim as base
+FROM node:${NODE_VERSION}-slim AS base
 
 ARG PORT=3000
 
 WORKDIR /src
 
 # Build
-FROM base as build
+FROM base AS build
 
 COPY --link package.json package-lock.json ./
-RUN apt-get update && \
-	apt-get install -y --no-install-recommends \
-	python3 \
-	make \
-	g++ \
-	libcairo2-dev \
-	libpango1.0-dev \
-	libjpeg-dev \
-	libgif-dev \
-	librsvg2-dev && \
-	rm -rf /var/lib/apt/lists/* && \
-	npm install
+RUN npm install
 
 COPY --link . .
 
 RUN npm run build
 
-# Convert logo.png to logo.svg
-RUN node convert-logo-to-svg.js || echo "SVG conversion failed, check logo.png exists."
 
 # Run
 FROM base
