@@ -25,7 +25,7 @@
     "nuxt": "4.1.2",
     "tailwindcss": "4.1.14",
     "typescript": "5.9.3",
-    "vue": "3.5.21",
+    "vue": "3.5.22",
     "vue-router": "4.5.1"
   },
   "imagetracerjs": "^1.2.6",
