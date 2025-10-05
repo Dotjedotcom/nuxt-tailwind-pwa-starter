@@ -2,29 +2,37 @@ ARG NODE_VERSION=22
 
 FROM node:${NODE_VERSION}-slim AS base
 
-ARG PORT=3000
-
-WORKDIR /src
-
-# Build
-FROM base AS build
-
-COPY --link package.json package-lock.json ./
-RUN npm install
-
-COPY --link . .
-
-RUN npm run build
-
-
-# Run
-FROM base
-
-ENV PORT=$PORT
+ENV PORT=3000
 ENV NODE_ENV=production
 
-COPY --from=build /src/.output /src/.output
-# Optional, only needed if you rely on unbundled dependencies
-# COPY --from=build /src/node_modules /src/node_modules
+WORKDIR /app
+
+# Build dependencies
+FROM base AS deps
+
+ENV NODE_ENV=development
+
+COPY --link package.json package-lock.json ./
+RUN npm ci
+
+# Build application
+FROM deps AS build
+
+COPY --link . .
+RUN npm run build
+RUN npm prune --omit=dev
+
+# Production image
+FROM base AS runtime
+
+RUN groupadd -r nuxt && useradd -r -g nuxt nuxt
+
+WORKDIR /app
+
+COPY --from=build --chown=nuxt:nuxt /app/.output ./.output
+
+USER nuxt
+
+EXPOSE 3000
 
 CMD [ "node", ".output/server/index.mjs" ]
