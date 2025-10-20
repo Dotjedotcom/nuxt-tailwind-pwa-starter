@@ -31,7 +31,7 @@
   "imagetracerjs": "^1.2.6",
   "canvas": "^2.11.2",
   "devDependencies": {
-    "@vite-pwa/assets-generator": "1.0.1",
+    "@vite-pwa/assets-generator": "1.0.2",
     "vite-plugin-pwa": "1.1.0"
   }
 }
