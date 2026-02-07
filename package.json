@@ -22,7 +22,7 @@
     "@tailwindcss/vite": "4.1.18",
     "@unhead/vue": "2.0.19",
     "eslint": "9.39.2",
-    "nuxt": "4.2.1",
+    "nuxt": "4.3.1",
     "tailwindcss": "4.1.18",
     "typescript": "5.9.3",
     "vue": "3.5.25",
