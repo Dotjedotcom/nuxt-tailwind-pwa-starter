@@ -1,30 +1,30 @@
-import { VitePWA } from 'vite-plugin-pwa'
+import { VitePWA } from "vite-plugin-pwa";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
+  compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
   ssr: true,
-  css: ['~/assets/css/main.css'],
+  css: ["~/assets/css/main.css"],
   modules: [
-    '@nuxt/eslint',
-    '@nuxt/image',
-    '@nuxt/scripts',
-    '@nuxt/test-utils',
-    '@nuxt/ui'
+    "@nuxt/eslint",
+    "@nuxt/image",
+    "@nuxt/scripts",
+    "@nuxt/test-utils",
+    "@nuxt/ui",
   ],
   vite: {
     plugins: [
       VitePWA({
-        injectRegister: 'auto',
-        registerType: 'autoUpdate',
+        injectRegister: "auto",
+        registerType: "autoUpdate",
         devOptions: {
-          enabled: true
+          enabled: true,
         },
         workbox: {
-          globPatterns: ['**/*.{js,css,html,ico,png,svg}']
-        }
-      })
-    ]
-  }
-})
+          globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
+        },
+      }),
+    ],
+  },
+});
