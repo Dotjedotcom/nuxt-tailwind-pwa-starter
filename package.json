@@ -9,7 +9,10 @@
     "generate": "nuxt generate",
     "generate-pwa-assets": "pwa-assets-generator",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:nuxt": "vitest --project nuxt"
   },
   "dependencies": {
     "@googlemaps/markerclusterer": "2.6.2",
@@ -32,6 +35,9 @@
   "canvas": "^2.11.2",
   "devDependencies": {
     "@vite-pwa/assets-generator": "1.0.2",
-    "vite-plugin-pwa": "1.2.0"
+    "@vue/test-utils": "^2.4.6",
+    "happy-dom": "^20.5.0",
+    "vite-plugin-pwa": "1.2.0",
+    "vitest": "^4.0.18"
   }
 }
