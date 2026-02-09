@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@googlemaps/markerclusterer": "2.6.2",
-    "@nuxt/eslint": "1.12.1",
+    "@nuxt/eslint": "1.14.0",
     "@nuxt/image": "2.0.0",
     "@nuxt/scripts": "0.13.1",
     "@nuxt/test-utils": "4.0.0",
