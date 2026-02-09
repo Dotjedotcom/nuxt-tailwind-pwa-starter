@@ -28,7 +28,7 @@
     "@nuxt/image": "2.0.0",
     "@nuxt/scripts": "0.13.1",
     "@nuxt/test-utils": "4.0.0",
-    "@nuxt/ui": "4.2.1",
+    "@nuxt/ui": "4.4.0",
     "@tailwindcss/postcss": "4.1.18",
     "@tailwindcss/vite": "4.1.18",
     "@unhead/vue": "2.0.19",
