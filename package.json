@@ -30,7 +30,7 @@
     "@nuxt/test-utils": "4.0.0",
     "@nuxt/ui": "4.2.1",
     "@tailwindcss/postcss": "4.1.18",
-    "@tailwindcss/vite": "4.1.18",
+    "@tailwindcss/vite": "4.2.1",
     "@unhead/vue": "2.0.19",
     "eslint": "9.39.2",
     "nuxt": "4.3.1",
