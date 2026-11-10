@@ -2,7 +2,8 @@ ARG NODE_VERSION=26
 
 FROM node:${NODE_VERSION}-slim AS base
 
-RUN corepack enable
+ARG PNPM_VERSION=12.18.0
+RUN npm install -g pnpm@${PNPM_VERSION}
 
 ENV NODE_ENV=development
 

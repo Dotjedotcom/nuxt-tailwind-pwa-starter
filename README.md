@@ -35,7 +35,7 @@ Makefile                # Convenience targets for package scripts & Docker
 ### Prerequisites
 
 - Node.js 26 (LTS)
-- pnpm 12+ (`corepack enable`)
+- pnpm 12+ (`npm i -g pnpm`)
 
 ### Installation
 
