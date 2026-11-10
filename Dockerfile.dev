@@ -1,6 +1,6 @@
-ARG NODE_VERSION=22
+ARG NODE_VERSION=26
 
-FROM node:20-slim AS base
+FROM node:${NODE_VERSION}-slim AS base
 
 RUN corepack enable
 

@@ -34,8 +34,8 @@ Makefile                # Convenience targets for package scripts & Docker
 
 ### Prerequisites
 
-- Node.js 20+ (matches Nuxt 4 engine requirements)
-- pnpm 11+ (`corepack enable`)
+- Node.js 26 (LTS)
+- pnpm 12+ (`corepack enable`)
 
 ### Installation
 
