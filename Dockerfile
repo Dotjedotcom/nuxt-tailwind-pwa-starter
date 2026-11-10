@@ -2,6 +2,8 @@ ARG NODE_VERSION=22
 
 FROM node:${NODE_VERSION}-slim AS base
 
+RUN corepack enable
+
 ENV PORT=3000
 ENV NODE_ENV=production
 
@@ -12,15 +14,14 @@ FROM base AS deps
 
 ENV NODE_ENV=development
 
-COPY --link package.json package-lock.json ./
-RUN npm ci
+COPY --link package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+RUN pnpm install --frozen-lockfile
 
 # Build application
 FROM deps AS build
 
 COPY --link . .
-RUN npm run build
-RUN npm prune --omit=dev
+RUN pnpm run build
 
 # Production image
 FROM base AS runtime

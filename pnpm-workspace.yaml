@@ -1,0 +1,10 @@
+allowBuilds:
+  esbuild: true
+  vue-demi: false
+minimumReleaseAgeExclude:
+  - esbuild@0.28.1
+  - glob@14.0.2
+  - minimatch@11.0.1
+overrides:
+  glob@>=9.0.0 <=14.0.1: ^14.0.2
+  minimatch@>=7.0.0 <11.0.1: ^11.0.1

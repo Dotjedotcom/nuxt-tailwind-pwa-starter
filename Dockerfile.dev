@@ -2,6 +2,8 @@ ARG NODE_VERSION=22
 
 FROM node:20-slim AS base
 
+RUN corepack enable
+
 ENV NODE_ENV=development
 
 WORKDIR /src
@@ -9,12 +11,12 @@ WORKDIR /src
 # Build
 FROM base AS build
 
-COPY --link package.json package-lock.json ./
-RUN npm install
+COPY --link package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+RUN pnpm install
 
 # Run
 FROM base
 
 COPY --from=build /src/node_modules /src/node_modules
 
-CMD [ "npm", "run", "dev" ]
+CMD [ "pnpm", "run", "dev" ]

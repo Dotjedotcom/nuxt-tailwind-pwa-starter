@@ -17,7 +17,7 @@ A developer-focused portfolio starter built with Nuxt 4, Tailwind CSS v4, and Nu
 2. Update `package.json` fields (`name`, `description`, repository info) to match your project.
 3. Replace the placeholder content inside `app/pages/index.vue` with your biography, projects, and contact links.
 4. Adjust global styles or tokens in `app/assets/css/main.css` and `app.config.ts` to align with your branding.
-5. Run `npm install` and `npm run dev` to verify everything before deploying.
+5. Run `pnpm install` and `pnpm run dev` to verify everything before deploying.
 
 ## Project Structure
 
@@ -27,7 +27,7 @@ app/
   pages/index.vue       # Landing page layout
 public/                 # Static assets served as-is
 nuxt.config.ts          # Nuxt + module configuration
-Makefile                # Convenience targets for npm scripts & Docker
+Makefile                # Convenience targets for package scripts & Docker
 ```
 
 ## Getting Started
@@ -35,18 +35,18 @@ Makefile                # Convenience targets for npm scripts & Docker
 ### Prerequisites
 
 - Node.js 20+ (matches Nuxt 4 engine requirements)
-- npm 10+ (auto-installed with Node 20)
+- pnpm 11+ (`corepack enable`)
 
 ### Installation
 
 ```bash
-npm install
+pnpm install
 ```
 
 ### Development
 
 ```bash
-npm run dev
+pnpm run dev
 # or
 make dev
 ```
@@ -56,14 +56,14 @@ The dev server defaults to `http://localhost:3000`. Use `--host` to expose it on
 ### Production Build
 
 ```bash
-npm run build
-npm run preview   # preview the production build locally
+pnpm run build
+pnpm run preview   # preview the production build locally
 ```
 
 ### PWA Assets
 
 ```bash
-npm run generate-pwa-assets
+pnpm run generate-pwa-assets
 # or
 make pwa-assets
 ```
@@ -92,7 +92,7 @@ make docker/compose/dev
 
 ## Deployment
 
-Nuxt supports many hosting options (Vercel, Netlify, Cloudflare Pages, Node servers, etc.). After running `npm run build`, deploy the `.output` directory or the generated Node server as per the [Nuxt deployment guide](https://nuxt.com/docs/getting-started/deployment).
+Nuxt supports many hosting options (Vercel, Netlify, Cloudflare Pages, Node servers, etc.). After running `pnpm run build`, deploy the `.output` directory or the generated Node server as per the [Nuxt deployment guide](https://nuxt.com/docs/getting-started/deployment).
 
 ---
 

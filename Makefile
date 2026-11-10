@@ -2,31 +2,31 @@
 
 install:
 	@echo "Installing dependencies..."
-	npm install
+	pnpm install
 
 dev:
 	@echo "Starting development server..."
-	npm run dev
+	pnpm run dev
 
 build:
 	@echo "Building the project..."
-	npm run build
+	pnpm run build
 
 generate:
 	@echo "Building the project..."
-	npm run generate
+	pnpm run generate
 
 pwa-assets:
 	@echo "Generating PWA assets..."
-	npm run generate-pwa-assets
+	pnpm run generate-pwa-assets
 
 preview:
 	@echo "Starting preview server..."
-	npm run preview
+	pnpm run preview
 
 postinstall:
 	@echo "Running post-install tasks..."
-	npm run postinstall
+	pnpm run postinstall
 
 docker/build:
 	@echo "Building Docker image..."
